@@ -1,0 +1,67 @@
+@media (max-width: 1250px) {
+  body {
+    gap: 3rem;
+  }
+  body footer {
+    min-width: 100vw;
+  }
+  body .sidebar {
+    width: 30px;
+    padding: 10px;
+  }
+  body .nav {
+    display: none;
+  }
+  body .mobileNav {
+    display: block;
+    font-size: 2rem;
+    height: 100vh;
+  }
+  body .mobileNav nav {
+    height: 100%;
+    width: 100%;
+  }
+  body .mobileNav nav ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  body .mobileNav nav li a {
+    color: darkgray;
+    text-decoration: none;
+    text-shadow: rgb(50, 184, 59) 0px 0px 40px;
+  }
+  body .mobileNav nav li a:hover {
+    cursor: pointer;
+    color: greenyellow;
+    text-shadow: rgb(50, 184, 59) 0px 50px 40px;
+  }
+  body .landing {
+    display: none;
+  }
+  body .landing header img {
+    max-height: 5px;
+  }
+  body .contact .contactformbox form input {
+    width: 80%;
+    font-size: 1.5rem;
+  }
+  body .contact .contactformbox form textarea {
+    width: 80%;
+    font-size: 1.5rem;
+  }
+  body .albums .albums-container img {
+    width: 80%;
+  }
+  body .albums .albums-container form a {
+    width: 10%;
+  }
+  body .albums .albums-container form a img {
+    width: 100%;
+  }
+}
+.albumCover {
+  max-width: 80%;
+}/*# sourceMappingURL=mobile.css.map */

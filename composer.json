@@ -1,0 +1,8 @@
+{
+    "name": "roger/slumdweller",
+    "description": "Slumdweller SLC",
+    "type": "project",
+    "require": {
+        "stripe/stripe-php": "9.8.0"
+    }
+}
