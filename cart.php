@@ -1,8 +1,9 @@
 <?php 
 
 include 'backend/connection.php';
+include 'backend/addToCart.php';
 
-$result = $connection->query("SELECT * FROM cart")
+$cartProducts = $connection->query("SELECT * FROM cart")
 
 ?>
 
@@ -19,7 +20,7 @@ $result = $connection->query("SELECT * FROM cart")
     <section class="album main">
         <table style="color: white; border:1px solid white;">
             <?php 
-                while($row = $result->fetch_assoc()){
+                while($row = $cartProducts->fetch_assoc()){
                     $image = $row['image'];
                     $product = $row['product'];
                     echo '<tr class="cart" id="' . $product . '" style="color: white; border:1px solid white;">';
