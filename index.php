@@ -1,5 +1,7 @@
 <?php 
     include 'backend/shopProducts.php';
+    include 'backend/connection.php';
+    include 'backend/addToCart.php';
     
     
 ?>
@@ -31,12 +33,17 @@
     <section class="section nav" id="nav">
         <nav>
             <ul>
-                <li><a href="#home">- Home</a></li>
-                <li><a href="#merch">- Merch</a></li>
-                <li><a href="#albums">- Albums</a></li>
-                <li><a href="#about">- About</a></li>
-                <li><a href="#contact">- Contact</a></li>
-                <li><a href="cart.php"><img src="assets/icons/cart.svg" class="icons" alt="Cart"><?php $num_of_items_in_cart ?></a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#merch">Merch</a></li>
+                <li><a href="#albums">Albums</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="cart.php"><img src="assets/icons/cart.svg" class="icons" alt="Cart">
+                    <?php 
+                       echo mysqli_num_rows($_SESSION['cart'])
+                    ?>
+                    </a>
+                </li>
             </ul>
         </nav>
     </section>
@@ -44,11 +51,17 @@
         <nav>
             <ul>
                 <li><a href="https://slumdwellermusic.com"><img src="assets/images/slumdweller-logo-mobile.webp" alt=""></a></li>
-                <li><a href="#home">- Home</a></li>
-                <li><a href="#merch">- Merch</a></li>
-                <li><a href="#albums">- Albums</a></li>
-                <li><a href="#about">- About</a></li>
-                <li><a href="#contact">- Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#merch">Merch</a></li>
+                <li><a href="#albums">Albums</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="cart.php"><img src="assets/icons/cart.svg" class="icons" alt="Cart">
+                    <?php 
+                       echo mysqli_num_rows($_SESSION['cart'])
+                    ?>
+                    </a>
+                </li>
             </ul>
         </nav>
     </section>

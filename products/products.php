@@ -1,7 +1,7 @@
 <?php
-    require '../backend/shopProducts.php';
-    include '../backend/payment.php';
     
+    include '../backend/shopProducts.php';
+    include '../backend/addToCart.php';
 
     function product_name(){
         if(isset($_POST['EEL'])){
@@ -24,6 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo product_name()?></title>
     <link rel="stylesheet" href="../assets/stylesheets/index.css">
+    <link rel="stylesheet" href="../assets/stylesheets/products.css">
 </head>
 <body>
         <section class="sidebar">
@@ -42,11 +43,17 @@
         <section class="section nav" id="nav">
             <nav>
                 <ul>
-                    <li><a href="../index.php#home">- Home</a></li>
-                    <li><a href="../index.php#merch">- Merch</a></li>
-                    <li><a href="../index.php#albums">- Albums</a></li>
-                    <li><a href="../index.php#about">- About</a></li>
-                    <li><a href="../index.php#contact">- Contact</a></li>
+                    <li><a href="../index.php#home">Home</a></li>
+                    <li><a href="../index.php#merch">Merch</a></li>
+                    <li><a href="../index.php#albums">Albums</a></li>
+                    <li><a href="../index.php#about">About</a></li>
+                    <li><a href="../index.php#contact">Contact</a></li>
+                    <li><a href="../cart.php"><img src="../assets/icons/cart.svg" class="icons" alt="Cart">
+                        <?php 
+                            mysqli_num_rows($_SESSION['cart'])
+                        ?>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </section>
@@ -54,11 +61,17 @@
             <nav>
                 <ul>
                     <li><a href="https://slumdwellermusic.com"><img src="assets/images/slumdweller-logo-mobile.webp" alt=""></a></li>
-                    <li><a href="../index.php#home">- Home</a></li>
-                    <li><a href="../index.php#merch">- Merch</a></li>
-                    <li><a href="../index.php#albums">- Albums</a></li>
-                    <li><a href="../index.php#about">- About</a></li>
-                    <li><a href="../index.php#contact">- Contact</a></li>
+                    <li><a href="../index.php#home">Home</a></li>
+                    <li><a href="../index.php#merch">Merch</a></li>
+                    <li><a href="../index.php#albums">Albums</a></li>
+                    <li><a href="../index.php#about">About</a></li>
+                    <li><a href="../index.php#contact">Contact</a></li>
+                    <li><a href="cart.php"><img src="../assets/icons/cart.svg" class="icons" alt="Cart">
+                        <?php 
+                            echo mysqli_num_rows($_SESSION['cart'])
+                        ?>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </section> 
@@ -97,12 +110,18 @@
                 <?php 
                     if(isset($_POST['EEL'])){
                         echo "<input type='hidden' name='product' value='" . $eel->name . "' />";
+                        echo "<input type='hidden' name='productImage' value='" . $eel->image . "'/>";
+                        echo "<input type='hidden' name='type' value='" . $eel->type . "'/>";
                     }
                     if(isset($_POST['OVAM'])){
                         echo "<input type='hidden' name='product' value='" . $ovam->name . "' />";
+                        echo "<input type='hidden' name='productImage' value='" . $ovam->image . "'/>";
+                        echo "<input type='hidden' name='type' value='" . $ovam->type . "'/>";
                     }
                     if(isset($_POST['FON'])){
                         echo "<input type='hidden' name='product' value='" . $fon->name . "' />";
+                        echo "<input type='hidden' name='productImage' value='" . $fon->image . "'/>";
+                        echo "<input type='hidden' name='type' value='" . $fon->type . "'/>";
                     }
                 ?>
                 <p class="amount"></p>

@@ -215,3 +215,15 @@ figcaption {
 .icons {
      width: 50px;
 }
+.cart {
+    width: 8rem;
+    td {
+        border: 1px solid white;
+        min-width: 5rem;
+        text-align: center;
+
+        img {
+            width: 40%;
+        }
+    }
+}

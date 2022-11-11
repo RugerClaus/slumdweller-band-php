@@ -220,4 +220,16 @@ figcaption {
 
 .icons {
   width: 50px;
+}
+
+.cart {
+  width: 8rem;
+}
+.cart td {
+  border: 1px solid white;
+  min-width: 5rem;
+  text-align: center;
+}
+.cart td img {
+  width: 40%;
 }/*# sourceMappingURL=index.css.map */
