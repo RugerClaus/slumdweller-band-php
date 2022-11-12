@@ -1,7 +1,7 @@
 <?php 
     include 'backend/shopProducts.php';
     include 'backend/connection.php';
-    include 'backend/addToCart.php';
+    include 'backend/session.php';
     
     
 ?>
@@ -74,7 +74,7 @@
             <img src="<?php echo $eel->image?>" alt="The EverLasting Fog">
             <h2 style="text-align: center;"><?php echo $eel->name;?></h2>
             <?php 
-                echo "<form action='products/products.php' method='post'>";
+                echo "<form action='products.php' method='post'>";
                 echo "<button type='submit' class='buy' name='EEL'>Buy</button>";
                 echo "<a href='https://open.spotify.com/artist/0OivFr63rPkaxNgXI3iweU?si=OKpsgI8RQgKZ_aBxvde09w' target='_blank'><img class='icon' src='assets/icons/spotify.svg' alt='Spotify' /></a>";
                 echo "<a href='https://slumdweller.bandcamp.com' target='_blank'><img class='icon' src='assets/icons/bandcamp.svg' alt='Bandcamp' /></a>";
@@ -86,7 +86,7 @@
             <img src="<?php echo $ovam->image?>" alt="Of Vineyards and Mist">
             <h2 style="text-align: center;"><?php echo $ovam->name?></h2>
             <?php 
-                echo "<form action='products/products.php' method='post'>";
+                echo "<form action='products.php' method='post'>";
                 echo "<button type='submit' name='OVAM' class='buy'>Buy</button>";
                 echo "<a href='https://open.spotify.com/artist/0OivFr63rPkaxNgXI3iweU?si=OKpsgI8RQgKZ_aBxvde09w' target='_blank'><img class='icon' src='assets/icons/spotify.svg' alt='Spotify' /></a>";
                 echo "<a href='https://slumdweller.bandcamp.com' target='_blank'><img class='icon' src='assets/icons/bandcamp.svg' alt='Bandcamp' /></a>";
@@ -98,7 +98,7 @@
             <img src="<?php echo $fon->image ?>" alt="<?php echo $fon->name?>">
             <h2 style="text-align: center;"><?php echo $fon->name ?></h2>
             <?php 
-                echo "<form action='products/products.php' method='post'>";
+                echo "<form action='products.php' method='post'>";
                 echo "<button type='submit' name='FON' class='buy'>Buy</button>";
                 echo "<a href='https://open.spotify.com/artist/0OivFr63rPkaxNgXI3iweU?si=OKpsgI8RQgKZ_aBxvde09w' target='_blank'><img class='icon' src='assets/icons/spotify.svg' alt='Spotify' /></a>";
                 echo "<a href='https://slumdweller.bandcamp.com' target='_blank'><img class='icon' src='assets/icons/bandcamp.svg' alt='Bandcamp' /></a>";

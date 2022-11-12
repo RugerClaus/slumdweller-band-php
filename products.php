@@ -1,7 +1,7 @@
 <?php
+    require 'backend/session.php';
+    include 'backend/shopProducts.php';
     
-    include '../backend/shopProducts.php';
-    include '../backend/addToCart.php';
 
     function product_name(){
         if(isset($_POST['EEL'])){
@@ -23,32 +23,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo product_name()?></title>
-    <link rel="stylesheet" href="../assets/stylesheets/index.css">
-    <link rel="stylesheet" href="../assets/stylesheets/products.css">
+    <link rel="stylesheet" href="assets/stylesheets/index.css">
+    <link rel="stylesheet" href="assets/stylesheets/products.css">
 </head>
 <body>
         <section class="sidebar">
-            <a href=""><img src="../assets/images/social/facebook.png" alt="Facebook"></a>
-            <a href=""><img src="../assets/images/social/twitter.svg" alt="Twitter"></a>
-            <a href=""><img src="../assets/images/social/instagram.svg" alt="Instagram"></a>
-            <a href=""><img src="../assets/icons/spotify.svg" alt="Spotify"></a>
-            <a href=""><img src="../assets/icons/youtube.svg" alt="YouTube"></a>
-            <a href=""><img src="../assets/icons/bandcamp.svg" alt="BandCamp"></a>
+            <a href=""><img src="assets/images/social/facebook.png" alt="Facebook"></a>
+            <a href=""><img src="assets/images/social/twitter.svg" alt="Twitter"></a>
+            <a href=""><img src="assets/images/social/instagram.svg" alt="Instagram"></a>
+            <a href=""><img src="assets/icons/spotify.svg" alt="Spotify"></a>
+            <a href=""><img src="assets/icons/youtube.svg" alt="YouTube"></a>
+            <a href=""><img src="assets/icons/bandcamp.svg" alt="BandCamp"></a>
         </section>
         <section class="section landing" id="home">
             <header>
-                <img src="../assets/images/slumdweller-logo.webp" alt="<h1>Slumdweller</h1>">
+                <img src="assets/images/slumdweller-logo.webp" alt="<h1>Slumdweller</h1>">
             </header>
         </section>
         <section class="section nav" id="nav">
             <nav>
                 <ul>
-                    <li><a href="../index.php#home">Home</a></li>
-                    <li><a href="../index.php#merch">Merch</a></li>
-                    <li><a href="../index.php#albums">Albums</a></li>
-                    <li><a href="../index.php#about">About</a></li>
-                    <li><a href="../index.php#contact">Contact</a></li>
-                    <li><a href="../cart.php"><img src="../assets/icons/cart.svg" class="icons" alt="Cart">
+                    <li><a href="index.php#home">Home</a></li>
+                    <li><a href="index.php#merch">Merch</a></li>
+                    <li><a href="index.php#albums">Albums</a></li>
+                    <li><a href="index.php#about">About</a></li>
+                    <li><a href="index.php#contact">Contact</a></li>
+                    <li><a href="cart.php"><img src="assets/icons/cart.svg" class="icons" alt="Cart">
                         <?php 
                             mysqli_num_rows($_SESSION['cart'])
                         ?>
@@ -61,12 +61,12 @@
             <nav>
                 <ul>
                     <li><a href="https://slumdwellermusic.com"><img src="assets/images/slumdweller-logo-mobile.webp" alt=""></a></li>
-                    <li><a href="../index.php#home">Home</a></li>
-                    <li><a href="../index.php#merch">Merch</a></li>
-                    <li><a href="../index.php#albums">Albums</a></li>
-                    <li><a href="../index.php#about">About</a></li>
-                    <li><a href="../index.php#contact">Contact</a></li>
-                    <li><a href="cart.php"><img src="../assets/icons/cart.svg" class="icons" alt="Cart">
+                    <li><a href="index.php#home">Home</a></li>
+                    <li><a href="index.php#merch">Merch</a></li>
+                    <li><a href="index.php#albums">Albums</a></li>
+                    <li><a href="index.php#about">About</a></li>
+                    <li><a href="index.php#contact">Contact</a></li>
+                    <li><a href="cart.php"><img src="assets/icons/cart.svg" class="icons" alt="Cart">
                         <?php 
                             echo mysqli_num_rows($_SESSION['cart'])
                         ?>
@@ -91,13 +91,13 @@
             </h2>
             <?php 
                 if(isset($_POST['EEL'])){
-                    echo "<img class='albumCover' src='" . "../" . "$eel->image' alt='$eel->name' />";
+                    echo "<img class='albumCover' src='" .  "$eel->image' alt='$eel->name' />";
                 }
                 if(isset($_POST['OVAM'])){
-                    echo "<img class='albumCover' src='" . "../" . "$ovam->image' alt='$ovam->name' />";
+                    echo "<img class='albumCover' src='" .  "$ovam->image' alt='$ovam->name' />";
                 }
                 if(isset($_POST['FON'])){
-                    echo "<img class='albumCover' src='" . "../" . "$fon->image' alt='$fon->name' />";
+                    echo "<img class='albumCover' src='" .  "$fon->image' alt='$fon->name' />";
                 }
             ?>
             <div class="amountForCart">
@@ -106,7 +106,7 @@
                 
                 <button class="more amountOfProductsModifier" type="">+</button>
             </div>
-            <form action="../backend/addToCart.php" method="post" id="buy">
+            <form action="backend/addToCart.php" method="post" id="buy">
                 <?php 
                     if(isset($_POST['EEL'])){
                         echo "<input type='hidden' name='product' value='" . $eel->name . "' />";
@@ -131,8 +131,8 @@
             <section class="extraspace"></section>
         </section>
         <script src="https://js.stripe.com/v3/"></script>
-        <script src="../frontend/js/stripe.js"></script>
-        <script src="../frontend/js/index.js"></script>
-        <script src="../frontend/js/products.js"></script>
+        <script src="frontend/js/stripe.js"></script>
+        <script src="frontend/js/index.js"></script>
+        <script src="frontend/js/products.js"></script>
 </body>
 </html>

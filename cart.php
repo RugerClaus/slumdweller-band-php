@@ -24,6 +24,12 @@ $cartProducts = $connection->query("SELECT * FROM cart")
                     $image = $row['image'];
                     $product = $row['product'];
                     echo '<tr class="cart" id="' . $product . '" style="color: white; border:1px solid white;">';
+                    echo "<td>";
+                    echo "<form action='backend/removeFromCart.php' method='post' />";
+                    echo "<input type='hidden' name='product' value='" . $row['product'] . "' />";
+                    echo "<input type='submit' name='deleteFromCart' value='delete' class='deleteFromCart' />";
+                    echo "</form>";
+                    echo "</td>";
                     echo "<td id='name'>";
                     echo $row['qty'];
                     echo "</td>";
