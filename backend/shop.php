@@ -22,7 +22,12 @@ class Product {
     public function buy() {
         if($this->in_stock < 1) header('location: ../outOfStock.php');
         
-        header("location: ../products/products.php");
+        header("location: products.php");
     }
 }
+$name = 'Patches';
+$type = 'merch';
+$image = 'assets/images/merch/patches/1.jpg';
+$id = create_id(6,null);
 
+$connection->query("INSERT INTO `products`(product_id,name,type,image) values('$id','$name','$type','$image')");

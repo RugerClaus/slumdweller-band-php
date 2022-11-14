@@ -1,0 +1,29 @@
+{
+  "name": "slumdweller-band-php",
+  "version": "1.0.0",
+  "description": "Slumdweller From Salt Lake City",
+  "main": "index.php",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RugerClaus/slumdweller-band-php.git"
+  },
+  "keywords": [
+    "metal",
+    "stoner",
+    "heavy",
+    "folk",
+    "acoustic"
+  ],
+  "author": "Roger Falck",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RugerClaus/slumdweller-band-php/issues"
+  },
+  "homepage": "https://github.com/RugerClaus/slumdweller-band-php#readme",
+  "dependencies": {
+    "braintree": "^3.12.0"
+  }
+}

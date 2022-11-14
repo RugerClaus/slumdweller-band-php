@@ -1,11 +1,16 @@
 const buttons = document.querySelectorAll('.amountOfProductsModifier')
 const amount = document.querySelector('.amount')
 const postAmount = document.querySelector('.amountToPost')
-const form = document.getElementById('buy')
+const addToCart = document.getElementById('addToCart')
 let counter = 0;
 
-form.addEventListener('submit', () => {
-    postAmount.value = amount.innerHTML
+addToCart.addEventListener('click', (e) => {
+    
+    if(amount.innerHTML == 0 || amount.innerHTML === ''){
+        e.preventDefault()
+    } else {
+        postAmount.value = amount.innerHTML
+    }
 })
 
 buttons.forEach(button => {

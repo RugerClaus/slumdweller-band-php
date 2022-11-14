@@ -12,3 +12,11 @@ $ovam = new Product($product['product_id'], $product['name'], $product['image'],
 $fon_result = $connection->query("SELECT * FROM products where product_id = '118'");
 $product = $fon_result->fetch_assoc();
 $fon = new Product($product['product_id'], $product['name'], $product['image'],$product['type'],$product['stock']);
+
+$pins_result = $connection->query("SELECT * FROM products where product_id = '258525'");
+$product = $pins_result->fetch_assoc();
+$pins = new Product($product['product_id'], $product['name'], $product['image'],$product['type'],$product['stock']);
+
+$patches_result = $connection->query("SELECT * FROM products where product_id = '234343'");
+$product = $patches_result->fetch_assoc();
+$patches = new Product($product['product_id'], $product['name'], $product['image'],$product['type'],$product['stock']);

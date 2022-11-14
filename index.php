@@ -67,6 +67,25 @@
     </section>
     <section class="section main merch" id="merch">
         <h1>Merch</h1>
+
+        <div class="merch-container">
+            <?php 
+                echo "<div class='merchbox'>";
+                echo "<h2>$pins->name</h2>";
+                echo "<img src='$pins->image' alt='$pins->name'/>";
+                echo "<form action='products.php' method='post'>";
+                echo "<button type='submit' class='buy' name='pins'>Buy</button>";
+                echo "</form>";
+                echo "</div>";
+                echo "<div class='merchbox'>";
+                echo "<h2>$patches->name</h2>";
+                echo "<img src='$patches->image' alt='$patches->name'/>";
+                echo "<form action='products.php' method='post'>";
+                echo "<button type='submit' class='buy' name='patches'>Buy</button>";
+                echo "</form>";
+                echo "</div>";
+            ?>
+        </div>
     </section>
     <section class="section main albums" id="albums">
         <h1>Albums</h1>

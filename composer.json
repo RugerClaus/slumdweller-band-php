@@ -3,6 +3,6 @@
     "description": "Slumdweller SLC",
     "type": "project",
     "require": {
-        "stripe/stripe-php": "9.8.0"
+        "braintree/braintree_php": "^6.10"
     }
 }

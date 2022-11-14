@@ -13,6 +13,9 @@
         if(isset($_POST['FON'])){
             return 'Forests Of November';
         }
+        if(isset($_POST['pins'])){
+            return 'Pins';
+        }
     };
 ?>
 
@@ -50,7 +53,7 @@
                     <li><a href="index.php#contact">Contact</a></li>
                     <li><a href="cart.php"><img src="assets/icons/cart.svg" class="icons" alt="Cart">
                         <?php 
-                            mysqli_num_rows($_SESSION['cart'])
+                            echo mysqli_num_rows($_SESSION['cart'])
                         ?>
                         </a>
                     </li>
@@ -87,6 +90,9 @@
                 if(isset($_POST['FON'])){
                     echo "Forests of November";
                 }
+                if(isset($_POST['pins'])){
+                    echo "$pins->name";
+                }
             ?>
             </h2>
             <?php 
@@ -98,6 +104,43 @@
                 }
                 if(isset($_POST['FON'])){
                     echo "<img class='albumCover' src='" .  "$fon->image' alt='$fon->name' />";
+                }
+                if(isset($_POST['pins'])){
+                    echo "<img class='albumCover' src='" .  "$pins->image' alt='$pins->name' />";
+                    echo "<div class='subImages'>";
+                    echo "<img class='subimage' src='assets/images/merch/pins/2.jpg' />"; 
+                    echo "<img class='subimage' src='assets/images/merch/pins/3.jpg' />"; 
+                    echo "</div>";
+                }
+                if(isset($_POST['patches'])){
+                    echo "<img class='albumCover' src='" .  "$patches->image' alt='$patches->name' />";
+                }
+                if(isset($_POST['SOTSConcept'])){
+                    echo "<img class='albumCover' src='" .  "$pins->image' alt='$pins->name' />";
+                    echo "<div class='subImages'>";
+                    echo "<img class='subimage' src='assets/images/merch/pins/2.jpg' />"; 
+                    echo "<img class='subimage' src='assets/images/merch/pins/3.jpg' />"; 
+                    echo "<img class='subimage' src='assets/images/merch/pins/4.jpg' />"; 
+                    echo "<img class='subimage' src='assets/images/merch/pins/5.jpg' />"; 
+                    echo "</div>";
+                }
+                if(isset($_POST['stickers-eel'])){
+                    echo "<img class='albumCover' src='" .  "$pins->image' alt='$pins->name' />";
+                    echo "<div class='subImages'>";
+                    echo "<img class='subimage' src='assets/images/merch/pins/2.jpg' />"; 
+                    echo "<img class='subimage' src='assets/images/merch/pins/3.jpg' />"; 
+                    echo "<img class='subimage' src='assets/images/merch/pins/4.jpg' />"; 
+                    echo "<img class='subimage' src='assets/images/merch/pins/5.jpg' />"; 
+                    echo "</div>";
+                }
+                if(isset($_POST['stickers-multicolor'])){
+                    echo "<img class='albumCover' src='" .  "$pins->image' alt='$pins->name' />";
+                    echo "<div class='subImages'>";
+                    echo "<img class='subimage' src='assets/images/merch/pins/2.jpg' />"; 
+                    echo "<img class='subimage' src='assets/images/merch/pins/3.jpg' />"; 
+                    echo "<img class='subimage' src='assets/images/merch/pins/4.jpg' />"; 
+                    echo "<img class='subimage' src='assets/images/merch/pins/5.jpg' />"; 
+                    echo "</div>";
                 }
             ?>
             <div class="amountForCart">
@@ -126,7 +169,7 @@
                 ?>
                 <p class="amount"></p>
                 <input type="hidden" name="amountToPost" class="amountToPost">
-                <input type="submit" value="addToCart" name="confirmAmount">
+                <input type="submit" value="addToCart" id="addToCart" name="confirmAmount">
             </form>
             <section class="extraspace"></section>
         </section>
