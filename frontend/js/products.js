@@ -2,6 +2,9 @@ const buttons = document.querySelectorAll('.amountOfProductsModifier')
 const amount = document.querySelector('.amount')
 const postAmount = document.querySelector('.amountToPost')
 const addToCart = document.getElementById('addToCart')
+const subimages = document.querySelectorAll('.subimage')
+const albumCover = document.querySelector('.albumCover')
+const subImagebox = document.querySelector('.subImages')
 let counter = 0;
 
 addToCart.addEventListener('click', (e) => {
@@ -24,5 +27,13 @@ buttons.forEach(button => {
         if(e.target.classList.contains('more')){
             amount.innerHTML = counter += 1
         }
+    })
+})
+
+subimages.forEach(image => {
+    image.addEventListener('click', () => {
+        const mainImage = albumCover.src;
+        albumCover.src = image.src
+        image.src = mainImage
     })
 })

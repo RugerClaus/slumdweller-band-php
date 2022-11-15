@@ -228,7 +228,6 @@
                     echo "<img class='subimage' src='$FONConcept->image2' />"; 
                     echo "<img class='subimage' src='$FONConcept->image3' />"; 
                     echo "<img class='subimage' src='$FONConcept->image4' />"; 
-                    echo "<img class='subimage' src='$FONConcept->image5' />";
                     echo "</div>";
                 }
                 if(isset($_POST['candles'])){
@@ -352,6 +351,7 @@
                         echo "<input type='hidden' name='type' value='" . $Book3->type . "'/>";                    
                     }
                 ?>
+                <div class="imageModal"></div>
                 <p class="amount"></p>
                 <input type="hidden" name="amountToPost" class="amountToPost">
                 <input type="submit" value="addToCart" id="addToCart" name="confirmAmount">

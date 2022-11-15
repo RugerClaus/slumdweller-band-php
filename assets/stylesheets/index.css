@@ -308,4 +308,17 @@ figcaption {
 
 .buy {
   font-size: 2rem;
+}
+
+.imageModal {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+.imageModal img {
+  align-self: center;
 }/*# sourceMappingURL=index.css.map */
