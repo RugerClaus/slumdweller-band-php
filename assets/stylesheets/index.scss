@@ -67,7 +67,7 @@ header {
     height: 80vh;
 }
 .nav {
-    height: 10vh;
+    height: 20vh;
     position: sticky;
     top: 30px;
 }
@@ -253,13 +253,27 @@ figcaption {
     flex-direction: column;
     align-items: center;
     gap: 5rem;
+    justify-content: center;
 
     .merch-container {
         display: grid;
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: auto;
         gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        .merchbox {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
     }
+}
+
+.merchimage {
+    width: 40%;
 }
 .albumCover {
     border: 1px solid white;
@@ -274,4 +288,7 @@ figcaption {
         max-width: 80%;
         border: 1px solid white;
     }
+}
+.buy {
+    font-size: 2rem;
 }

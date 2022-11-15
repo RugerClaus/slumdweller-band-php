@@ -81,14 +81,11 @@
         <section class="main albums">
             <h2 style="text-align: center;">
             <?php 
-                if(isset($_POST['EEL'])){
-                    echo "The Everlasting Fog";
-                }
-                if(isset($_POST['OVAM'])){
-                    echo "Of Vineyards And Mist";
+                if(isset($_POST['ELF'])){
+                    echo "$elf->name";
                 }
                 if(isset($_POST['FON'])){
-                    echo "Forests of November";
+                    echo "$fon->name";
                 }
                 if(isset($_POST['pins'])){
                     echo "$pins->name";
@@ -97,23 +94,20 @@
             </h2>
             <?php 
                 if(isset($_POST['EEL'])){
-                    echo "<img class='albumCover' src='" .  "$eel->image' alt='$eel->name' />";
-                }
-                if(isset($_POST['OVAM'])){
-                    echo "<img class='albumCover' src='" .  "$ovam->image' alt='$ovam->name' />";
+                    echo "<img class='albumCover' src='" .  "$elf->image1' alt='$elf->name' />";
                 }
                 if(isset($_POST['FON'])){
-                    echo "<img class='albumCover' src='" .  "$fon->image' alt='$fon->name' />";
+                    echo "<img class='albumCover' src='" .  "$fon->image1' alt='$fon->name' />";
                 }
                 if(isset($_POST['pins'])){
-                    echo "<img class='albumCover' src='" .  "$pins->image' alt='$pins->name' />";
+                    echo "<img class='albumCover' src='" .  "$pins->image1' alt='$pins->name' />";
                     echo "<div class='subImages'>";
-                    echo "<img class='subimage' src='assets/images/merch/pins/2.jpg' />"; 
-                    echo "<img class='subimage' src='assets/images/merch/pins/3.jpg' />"; 
+                    echo "<img class='subimage' src='$pins->image2' />"; 
+                    echo "<img class='subimage' src='$pins->image3' />"; 
                     echo "</div>";
                 }
                 if(isset($_POST['patches'])){
-                    echo "<img class='albumCover' src='" .  "$patches->image' alt='$patches->name' />";
+                    echo "<img class='albumCover' src='" .  "$patches->image1' alt='$patches->name' />";
                 }
                 if(isset($_POST['SOTSConcept'])){
                     echo "<img class='albumCover' src='" .  "$pins->image' alt='$pins->name' />";

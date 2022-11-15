@@ -6,28 +6,38 @@ include 'functions.php';
 class Product {
     public int $product_id;
     public $name;
-    public $image;
+    public $image1;
+    public $image2;
+    public $image3;
+    public $image4;
+    public $image5;
     public $type;
     public int $in_stock;
     
-    public function __construct(int $product_id,$name,$image,$type, int $in_stock)
+    public function __construct(int $product_id,$name,$image1,$image2,$image3,$image4,$image5,$type, $in_stock, $description)
     {
         $this->product_id = $product_id;
         $this->name = $name;
-        $this->image = $image;
+        $this->image1 = $image1;
+        $this->image2 = $image2;
+        $this->image3 = $image3;
+        $this->image4 = $image4;
+        $this->image5 = $image5;
         $this->type = $type;
         $this->in_stock = $in_stock;
-    }
-
-    public function buy() {
-        if($this->in_stock < 1) header('location: ../outOfStock.php');
-        
-        header("location: products.php");
+        $this->description = $description;
     }
 }
-$name = 'Patches';
-$type = 'merch';
-$image = 'assets/images/merch/patches/1.jpg';
-$id = create_id(6,null);
+// $name = 'Forests of November';
+// $type = 'album';
+// $desc = 'Comes in a jewel case. Artwork and design by Ryan Blackbourn. Artwork created by Isabella Moreno. Only fifty of the signed copies will be made.';
+// $image1 = 'assets/images/forestsofnovember.jpg';
+// $image2 = '';
+// $image3 = '';
+// $image4 = '';
+// $image5 = '';
+// $in_stock = true;
+// $id = create_id(6,null);
 
-$connection->query("INSERT INTO `products`(product_id,name,type,image) values('$id','$name','$type','$image')");
+
+// $connection->query("INSERT INTO `products`(product_id,description,name,type,image1,image2,image3,image4,image5,in_stock) values('$id','$desc','$name','$type','$image1','$image2','$image3','$image4','$image5',$in_stock)");

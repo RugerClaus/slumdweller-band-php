@@ -1,5 +1,26 @@
 @media(max-width: 1250px ){
+
+    
+
     body {
+        .merch {
+
+            .merch-container {
+                display: flex;
+                grid-template-columns: none;
+                grid-template-rows: none;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .merchbox {
+                    
+                    .merchimage {
+                        width: 80%;
+                    }
+                }
+            }
+        }
         footer {
             min-width: 100vw;
         }
@@ -78,6 +99,7 @@
             }
         }
     }
+    
 }
 .albumCover {
     max-width: 80%;

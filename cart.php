@@ -23,30 +23,31 @@ $cartProducts = $connection->query("SELECT * FROM cart");
             <?php 
             if(mysqli_num_rows($cartProducts) === 0){
                 echo "<h1>Cart Is emtpy</h1>";
-            } else {
-                    while($row = $cartProducts->fetch_assoc()){
-                        $product = $row['product'];
-                        echo '<tr class="cart" id="' . $row['product'] . '" style="color: white; border:1px solid white;">';
-                        echo "<td>";
-                        echo "<form action='backend/removeFromCart.php' method='post' />";
-                        echo "<input type='hidden' name='product' value='" . $row['product'] . "' />";
-                        echo "<input type='submit' name='deleteFromCart' value='delete' class='deleteFromCart' />";
-                        echo "</form>";
-                        echo "</td>";
-                        echo "<td id='name'>";
-                        echo $row['qty'];
-                        echo "</td>";
-                        echo "<td id='product'>";
-                        echo $row['product'];
-                        echo "</td>";
-                        echo "<td>";
-                        echo $row['type'];
-                        echo "</td>";
-                        echo "<td>";
-                        echo "<img src='$image' alt='$product' />";
-                        echo "</td>";
-                        echo '</tr>';
-                    }
+            } else 
+            {
+                while($row = $cartProducts->fetch_assoc()){
+                    $product = $row['product'];
+                    echo '<tr class="cart" id="' . $row['product'] . '" style="color: white; border:1px solid white;">';
+                    echo "<td>";
+                    echo "<form action='backend/removeFromCart.php' method='post' />";
+                    echo "<input type='hidden' name='product' value='" . $row['product'] . "' />";
+                    echo "<input type='submit' name='deleteFromCart' value='delete' class='deleteFromCart' />";
+                    echo "</form>";
+                    echo "</td>";
+                    echo "<td id='name'>";
+                    echo $row['qty'];
+                    echo "</td>";
+                    echo "<td id='product'>";
+                    echo $row['product'];
+                    echo "</td>";
+                    echo "<td>";
+                    echo $row['type'];
+                    echo "</td>";
+                    echo "<td>";
+                    echo "<img src='$image' alt='$product' />";
+                    echo "</td>";
+                    echo '</tr>';
+                }
             }
                 
             ?>

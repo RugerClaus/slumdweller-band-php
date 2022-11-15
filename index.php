@@ -72,29 +72,86 @@
             <?php 
                 echo "<div class='merchbox'>";
                 echo "<h2>$pins->name</h2>";
-                echo "<img src='$pins->image' alt='$pins->name'/>";
+                echo "<img class='merchimage' src='$pins->image1' alt='$pins->name'/>";
                 echo "<form action='products.php' method='post'>";
                 echo "<button type='submit' class='buy' name='pins'>Buy</button>";
                 echo "</form>";
                 echo "</div>";
                 echo "<div class='merchbox'>";
                 echo "<h2>$patches->name</h2>";
-                echo "<img src='$patches->image' alt='$patches->name'/>";
+                echo "<img class='merchimage' src='$patches->image1' alt='$patches->name'/>";
                 echo "<form action='products.php' method='post'>";
                 echo "<button type='submit' class='buy' name='patches'>Buy</button>";
                 echo "</form>";
                 echo "</div>";
+                echo "<div class='merchbox'>";
+                echo "<h2>$stickers_elf->name</h2>";
+                echo "<img class='merchimage' src='$stickers_elf->image1' alt='$stickers_elf->name'/>";
+                echo "<form action='products.php' method='post'>";
+                echo "<button type='submit' class='buy' name='stickers-elf'>Buy</button>";
+                echo "</form>";
+                echo "</div>";
+                echo "<div class='merchbox'>";
+                echo "<h2>$stickers_multicolor->name</h2>";
+                echo "<img class='merchimage' src='$stickers_multicolor->image1' alt='$stickers_multicolor->name'/>";
+                echo "<form action='products.php' method='post'>";
+                echo "<button type='submit' class='buy' name='stickers-multicolor'>Buy</button>";
+                echo "</form>";
+                echo "</div>";
+                echo "<div class='merchbox'>";
+                echo "<h2>$jones->name</h2>";
+                echo "<img  class='merchimage' src='$jones->image1' alt='$jones->name'/>";
+                echo "<form action='products.php' method='post'>";
+                echo "<button type='submit' class='buy' name='jones'>Buy</button>";
+                echo "</form>";
+                echo "</div>";
+                echo "<div class='merchbox'>";
+                echo "<h2>$WITW->name</h2>";
+                echo "<img  class='merchimage' src='$WITW->image1' alt='$WITW->name'/>";
+                echo "<form action='products.php' method='post'>";
+                echo "<button type='submit' class='buy' name='jones'>Buy</button>";
+                echo "</form>";
+                echo "</div>";
+                echo "<div class='merchbox'>";
+                echo "<h2>$SOTS->name</h2>";
+                echo "<img  class='merchimage' src='$SOTS->image1' alt='$SOTS->name'/>";
+                echo "<form action='products.php' method='post'>";
+                echo "<button type='submit' class='buy' name='jones'>Buy</button>";
+                echo "</form>";
+                echo "</div>";
+                echo "<div class='merchbox'>";
+                echo "<h2>$ELFConcept->name</h2>";
+                echo "<img  class='merchimage' src='$ELFConcept->image1' alt='$ELFConcept->name'/>";
+                echo "<form action='products.php' method='post'>";
+                echo "<button type='submit' class='buy' name='jones'>Buy</button>";
+                echo "</form>";
+                echo "</div>";
+                echo "<div class='merchbox'>";
+                echo "<h2>$FONConcept->name</h2>";
+                echo "<img  class='merchimage' src='$FONConcept->image1' alt='$FONConcept->name'/>";
+                echo "<form action='products.php' method='post'>";
+                echo "<button type='submit' class='buy' name='jones'>Buy</button>";
+                echo "</form>";
+                echo "</div>";
+                echo "<div class='merchbox'>";
+                echo "<h2>$candles->name</h2>";
+                echo "<img  class='merchimage' src='$candles->image1' alt='$candles->name'/>";
+                echo "<form action='products.php' method='post'>";
+                echo "<button type='submit' class='buy' name='jones'>Buy</button>";
+                echo "</form>";
+                echo "</div>";
+
             ?>
         </div>
     </section>
     <section class="section main albums" id="albums">
         <h1>Albums</h1>
         <div class="albums-container">
-            <img src="<?php echo $eel->image?>" alt="The EverLasting Fog">
-            <h2 style="text-align: center;"><?php echo $eel->name;?></h2>
+            <img src="<?php echo $elf->image1?>" alt="The EverLasting Fog">
+            <h2 style="text-align: center;"><?php echo $elf->name;?></h2>
             <?php 
                 echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy' name='EEL'>Buy</button>";
+                echo "<button type='submit' class='buy' name='ELF'>Buy</button>";
                 echo "<a href='https://open.spotify.com/artist/0OivFr63rPkaxNgXI3iweU?si=OKpsgI8RQgKZ_aBxvde09w' target='_blank'><img class='icon' src='assets/icons/spotify.svg' alt='Spotify' /></a>";
                 echo "<a href='https://slumdweller.bandcamp.com' target='_blank'><img class='icon' src='assets/icons/bandcamp.svg' alt='Bandcamp' /></a>";
                 echo "<a href='https://www.youtube.com/channel/UCbZ4oFgZPT7tRYscrwjUEwg' target='_blank'><img class='icon' src='assets/icons/youtube.svg' alt='Youtube' /></a>";
@@ -102,19 +159,7 @@
             ?>
         </div>
         <div class="albums-container">
-            <img src="<?php echo $ovam->image?>" alt="Of Vineyards and Mist">
-            <h2 style="text-align: center;"><?php echo $ovam->name?></h2>
-            <?php 
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' name='OVAM' class='buy'>Buy</button>";
-                echo "<a href='https://open.spotify.com/artist/0OivFr63rPkaxNgXI3iweU?si=OKpsgI8RQgKZ_aBxvde09w' target='_blank'><img class='icon' src='assets/icons/spotify.svg' alt='Spotify' /></a>";
-                echo "<a href='https://slumdweller.bandcamp.com' target='_blank'><img class='icon' src='assets/icons/bandcamp.svg' alt='Bandcamp' /></a>";
-                echo "<a href='https://www.youtube.com/channel/UCbZ4oFgZPT7tRYscrwjUEwg' target='_blank'><img class='icon' src='assets/icons/youtube.svg' alt='Youtube' /></a>";
-                echo "</form>";
-            ?>
-        </div>
-        <div class="albums-container">
-            <img src="<?php echo $fon->image ?>" alt="<?php echo $fon->name?>">
+            <img src="<?php echo $fon->image1 ?>" alt="<?php echo $fon->name?>">
             <h2 style="text-align: center;"><?php echo $fon->name ?></h2>
             <?php 
                 echo "<form action='products.php' method='post'>";

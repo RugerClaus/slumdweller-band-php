@@ -2,6 +2,17 @@
   body {
     gap: 3rem;
   }
+  body .merch .merch-container {
+    display: flex;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body .merch .merch-container .merchbox .merchimage {
+    width: 80%;
+  }
   body footer {
     min-width: 100vw;
   }
