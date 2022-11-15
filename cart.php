@@ -19,7 +19,7 @@ $cartProducts = $connection->query("SELECT * FROM cart");
 </head>
 <body>
     <section class="album main">
-        <table style="color: white; border:1px solid white;">
+        <table style="color: white;">
             <?php 
             if(mysqli_num_rows($cartProducts) === 0){
                 echo "<h1>Cart Is emtpy</h1>";
@@ -28,24 +28,33 @@ $cartProducts = $connection->query("SELECT * FROM cart");
                 while($row = $cartProducts->fetch_assoc()){
                     $product = $row['product'];
                     $image = $row['image'];
-                    echo '<tr class="cart" id="' . $row['product'] . '" style="color: white; border:1px solid white;">';
+                    $price = $row['price'];
+                    echo '<tr class="cart" id="' . $product . '" style="color: white;">';
                     echo "<td>";
                     echo "<form action='backend/removeFromCart.php' method='post' />";
-                    echo "<input type='hidden' name='product' value='" . $row['product'] . "' />";
+                    echo "<input type='hidden' name='product' value='" . $product . "' />";
                     echo "<button type='submit' name='deleteFromCart' class='btn delete' value='delete' class='deleteFromCart'>Delete</button>";
                     echo "</form>";
                     echo "</td>";
-                    echo "<td id='name'>";
+                    echo "<td id='qty'>";
                     echo $row['qty'];
                     echo "</td>";
                     echo "<td id='product'>";
                     echo $row['product'];
                     echo "</td>";
                     echo "<td>";
+                    echo "</td>";
+                    echo "<td id='type'>";
                     echo $row['type'];
                     echo "</td>";
                     echo "<td>";
                     echo "<img src='$image' alt='$product' />";
+                    echo "</td>";
+                    echo "<td>";
+                    echo "$";
+                    echo "</td>";
+                    echo "<td id='price' class='price'>";
+                    echo "$price";
                     echo "</td>";
                     echo '</tr>';
                 }
@@ -57,8 +66,25 @@ $cartProducts = $connection->query("SELECT * FROM cart");
     </section>
     <?php 
         if(mysqli_num_rows($cartProducts) > 0){
-            echo "<a href='payment.php' class='btn'>Checkout</a>";
+            echo "<div id='checkout'></div>";
         }
     ?>
+    <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD&intent=capture&enable-funding=venmo" data-sdk-integration-source="integrationbuilder"></script>
+    <script >
+        const prices = document.querySelectorAll('.price')
+        const pricesArr = Array.from(prices)
+
+
+        paypal.Buttons({
+            createOrder: (data,actions) => actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: pricesArr.
+                        }
+                    }]
+                }) 
+        }).render('#checkout');
+  
+    </script>
 </body>
 </html>
