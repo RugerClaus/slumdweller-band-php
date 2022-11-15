@@ -250,6 +250,10 @@ figcaption {
   background-color: rgb(0, 244, 126);
 }
 
+.delete:hover {
+  background-color: crimson;
+}
+
 .paypal {
   display: flex;
   width: 100vw;
@@ -294,7 +298,7 @@ figcaption {
   display: grid;
   max-height: 150px;
   width: 500px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 .subImages .subimage {
   max-width: 80%;

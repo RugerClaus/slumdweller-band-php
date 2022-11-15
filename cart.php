@@ -27,11 +27,12 @@ $cartProducts = $connection->query("SELECT * FROM cart");
             {
                 while($row = $cartProducts->fetch_assoc()){
                     $product = $row['product'];
+                    $image = $row['image'];
                     echo '<tr class="cart" id="' . $row['product'] . '" style="color: white; border:1px solid white;">';
                     echo "<td>";
                     echo "<form action='backend/removeFromCart.php' method='post' />";
                     echo "<input type='hidden' name='product' value='" . $row['product'] . "' />";
-                    echo "<input type='submit' name='deleteFromCart' value='delete' class='deleteFromCart' />";
+                    echo "<button type='submit' name='deleteFromCart' class='btn delete' value='delete' class='deleteFromCart'>Delete</button>";
                     echo "</form>";
                     echo "</td>";
                     echo "<td id='name'>";
@@ -52,11 +53,12 @@ $cartProducts = $connection->query("SELECT * FROM cart");
                 
             ?>
         </table>
-        <?php 
-            if(mysqli_num_rows($cartProducts) !== 0){
-                echo "<a href='payment.php' class='btn'>Checkout</a>";
-            }
-        ?>
+        
     </section>
+    <?php 
+        if(mysqli_num_rows($cartProducts) > 0){
+            echo "<a href='payment.php' class='btn'>Checkout</a>";
+        }
+    ?>
 </body>
 </html>

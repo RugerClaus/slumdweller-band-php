@@ -48,3 +48,15 @@ $FONConcept = new Product($product10['product_id'],$product10['name'],$product10
 $candles_result = $connection->query("SELECT * FROM products where product_id = '211011511'");
 $product11 = $candles_result->fetch_assoc();
 $candles = new Product($product11['product_id'],$product11['name'],$product11['image1'],$product11['image2'],$product11['image3'],$product11['image4'],$product11['image5'],$product11['type'],$product11['in_stock'],$product11['description']);
+
+$Book1_result = $connection->query("SELECT * FROM products where product_id = '277717'");
+$product12 = $Book1_result->fetch_assoc();
+$Book1 = new Product($product12['product_id'],$product12['name'],$product12['image1'],$product12['image2'],$product12['image3'],$product12['image4'],$product12['image5'],$product12['type'],$product12['in_stock'],$product12['description']);
+
+$Book2_result = $connection->query("SELECT * FROM products where product_id = '210210210'");
+$product13 = $Book2_result->fetch_assoc();
+$Book2 = new Product($product13['product_id'],$product13['name'],$product13['image1'],$product13['image2'],$product13['image3'],$product13['image4'],$product13['image5'],$product13['type'],$product13['in_stock'],$product13['description']);
+
+$Book3_result = $connection->query("SELECT * FROM products where product_id = '282888'");
+$product14 = $Book3_result->fetch_assoc();
+$Book3 = new Product($product14['product_id'],$product14['name'],$product14['image1'],$product14['image2'],$product14['image3'],$product14['image4'],$product14['image5'],$product14['type'],$product14['in_stock'],$product14['description']);
