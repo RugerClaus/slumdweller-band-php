@@ -87,6 +87,22 @@ header {
         text-align: center;
         width: 100%;
     }
+    table {
+        font-size: 2rem;
+        min-height: 250px;
+        tr {
+            gap: 2rem;
+            height: 100%;
+            td {
+                height: 100%;
+
+                img {
+                    height: 100%;
+                }
+            }
+            
+        }
+    }
 }
 .albums {
     display: flex;
@@ -218,7 +234,6 @@ figcaption {
 .cart {
     width: 8rem;
     td {
-        border: 1px solid white;
         min-width: 5rem;
         text-align: center;
 
@@ -307,4 +322,10 @@ figcaption {
     img {
         align-self: center;
     }
+}
+#checkout {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

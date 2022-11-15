@@ -9,7 +9,7 @@ let counter = 0;
 
 addToCart.addEventListener('click', (e) => {
     
-    if(amount.innerHTML == 0 || amount.innerHTML === ''){
+    if(amount.value == 0 || amount.value === ''){
         e.preventDefault()
     } else {
         postAmount.value = amount.innerHTML
@@ -19,20 +19,20 @@ addToCart.addEventListener('click', (e) => {
 buttons.forEach(button => {
     button.addEventListener('click', (e) => {
         if(counter === 0){
-            amount.innerHTML = counter
+            amount.value = counter
         }
         if(e.target.classList.contains('less')){
-            amount.innerHTML = counter--
+            amount.value = counter--
         }e
         if(e.target.classList.contains('more')){
-            amount.innerHTML = counter += 1
+            amount.value = counter += 1
         }
     })
 })
 
 subimages.forEach(image => {
     image.addEventListener('click', () => {
-        const mainImage = albumCover.src;
+        const mainImage = albumCover.src
         albumCover.src = image.src
         image.src = mainImage
     })

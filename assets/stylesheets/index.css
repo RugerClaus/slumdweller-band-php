@@ -86,6 +86,20 @@ header img {
   text-align: center;
   width: 100%;
 }
+.main table {
+  font-size: 2rem;
+  min-height: 250px;
+}
+.main table tr {
+  gap: 2rem;
+  height: 100%;
+}
+.main table tr td {
+  height: 100%;
+}
+.main table tr td img {
+  height: 100%;
+}
 
 .albums {
   display: flex;
@@ -226,7 +240,6 @@ figcaption {
   width: 8rem;
 }
 .cart td {
-  border: 1px solid white;
   min-width: 5rem;
   text-align: center;
 }
@@ -321,4 +334,11 @@ figcaption {
 }
 .imageModal img {
   align-self: center;
+}
+
+#checkout {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=index.css.map */

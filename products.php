@@ -164,12 +164,21 @@
             <?php 
                 if(isset($_POST['ELF'])){
                     echo "<img class='albumCover' src='" .  "$elf->image1' alt='$elf->name' />";
+                    echo "<h1>";
+                    echo "$" . $elf->price;
+                    echo "</h1>";
                 }
                 if(isset($_POST['FON'])){
                     echo "<img class='albumCover' src='" .  "$fon->image1' alt='$fon->name' />";
+                    echo "<h1>";
+                    echo "$" . $fon->price;
+                    echo "</h1>";
                 }
                 if(isset($_POST['pins'])){
                     echo "<img class='albumCover' src='" .  "$pins->image1' alt='$pins->name' />";
+                    echo "<h1>";
+                    echo "$" . $pins->price;
+                    echo "</h1>";
                     echo "<div class='subImages'>";
                     echo "<img class='subimage' src='$pins->image2' />"; 
                     echo "<img class='subimage' src='$pins->image3' />"; 
@@ -177,9 +186,15 @@
                 }
                 if(isset($_POST['patches'])){
                     echo "<img class='albumCover' src='" .  "$patches->image1' alt='$patches->name' />";
+                    echo "<h1>";
+                    echo "$" . $patches->price;
+                    echo "</h1>";
                 }
                 if(isset($_POST['sots'])){
                     echo "<img class='albumCover' src='" .  "$SOTS->image1' alt='$SOTS->name' />";
+                    echo "<h1>";
+                    echo "$" . $SOTS->price;
+                    echo "</h1>";
                     echo "<div class='subImages'>";
                     echo "<img class='subimage' src='$SOTS->image2' />"; 
                     echo "<img class='subimage' src='$SOTS->image3' />"; 
@@ -189,15 +204,24 @@
                 }
                 if(isset($_POST['stickers-elf'])){
                     echo "<img class='albumCover' src='" .  "$stickers_elf->image1' alt='$stickers_elf->name' />";
+                    echo "<h1>";
+                    echo "$" . $stickers_elf->price;
+                    echo "</h1>";
                 }
                 if(isset($_POST['stickers-multicolor'])){
                     echo "<img class='albumCover' src='" .  "$stickers_multicolor->image1' alt='$stickers_multicolor->name' />";
+                    echo "<h1>";
+                    echo "$" . $stickers_multicolor->price;
+                    echo "</h1>";
                     echo "<div class='subImages'>";
                     echo "<img class='subimage' src='$stickers_multicolor->image2' />"; 
                     echo "</div>";
                 }
                 if(isset($_POST['jones'])){
                     echo "<img class='albumCover' src='" .  "$jones->image1' alt='$jones->name' />";
+                    echo "<h1>";
+                    echo "$" . $jones->price;
+                    echo "</h1>";
                     echo "<div class='subImages'>";
                     echo "<img class='subimage' src='$jones->image2' />"; 
                     echo "<img class='subimage' src='$jones->image3' />"; 
@@ -206,6 +230,9 @@
                 }
                 if(isset($_POST['witw'])){
                     echo "<img class='albumCover' src='" .  "$WITW->image1' alt='$WITW->name' />";
+                    echo "<h1>";
+                    echo "$" . $WITW->price;
+                    echo "</h1>";
                     echo "<div class='subImages'>";
                     echo "<img class='subimage' src='$WITW->image2' />"; 
                     echo "<img class='subimage' src='$WITW->image3' />"; 
@@ -215,6 +242,9 @@
                 }
                 if(isset($_POST['elfconcept'])){
                     echo "<img class='albumCover' src='" .  "$ELFConcept->image1' alt='$ELFConcept->name' />";
+                    echo "<h1>";
+                    echo "$" . $ELFConcept->price;
+                    echo "</h1>";
                     echo "<div class='subImages'>";
                     echo "<img class='subimage' src='$ELFConcept->image2' />"; 
                     echo "<img class='subimage' src='$ELFConcept->image3' />"; 
@@ -224,6 +254,9 @@
                 }
                 if(isset($_POST['fonconcept'])){
                     echo "<img class='albumCover' src='" .  "$FONConcept->image1' alt='$FONConcept->name' />";
+                    echo "<h1>";
+                    echo "$" . $FONConcept->price;
+                    echo "</h1>";
                     echo "<div class='subImages'>";
                     echo "<img class='subimage' src='$FONConcept->image2' />"; 
                     echo "<img class='subimage' src='$FONConcept->image3' />"; 
@@ -232,6 +265,9 @@
                 }
                 if(isset($_POST['candles'])){
                     echo "<img class='albumCover' src='" .  "$candles->image1' alt='$candles->name' />";
+                    echo "<h1>";
+                    echo "$" . $candles->price;
+                    echo "</h1>";
                     echo "<div class='subImages'>";
                     echo "<img class='subimage' src='$candles->image2' />"; 
                     echo "<img class='subimage' src='$candles->image3' />"; 
@@ -241,6 +277,9 @@
                 }
                 if(isset($_POST['book1'])){
                     echo "<img class='albumCover' src='" .  "$Book1->image1' alt='$Book1->name' />";
+                    echo "<h1>";
+                    echo "$" . $Book1->price;
+                    echo "</h1>";
                     echo "<div class='subImages'>";
                     echo "<img class='subimage' src='$Book1->image2' />"; 
                     echo "<img class='subimage' src='$Book1->image3' />"; 
@@ -250,6 +289,9 @@
                 }
                 if(isset($_POST['book2'])){
                     echo "<img class='albumCover' src='" .  "$Book2->image1' alt='$Book3->name' />";
+                    echo "<h1>";
+                    echo "$" . $Book2->price;
+                    echo "</h1>";
                     echo "<div class='subImages'>";
                     echo "<img class='subimage' src='$Book2->image2' />"; 
                     echo "<img class='subimage' src='$Book2->image3' />"; 
@@ -259,6 +301,9 @@
                 }
                 if(isset($_POST['book3'])){
                     echo "<img class='albumCover' src='" .  "$Book3->image1' alt='$Book3->name' />";
+                    echo "<h1>";
+                    echo "$" . $Book3->price;
+                    echo "</h1>";
                     echo "<div class='subImages'>";
                     echo "<img class='subimage' src='$Book3->image2' />"; 
                     echo "<img class='subimage' src='$Book3->image3' />"; 
@@ -279,88 +324,108 @@
                         echo "<input type='hidden' name='product' value='" . $elf->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $elf->image1 . "'/>";
                         echo "<input type='hidden' name='type' value='" . $elf->type . "'/>";
+                        echo "<input type='hidden' name='price' value='" . $elf->price . "'>"; 
                     }
                     if(isset($_POST['FON'])){
                         echo "<input type='hidden' name='product' value='" . $fon->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $fon->image1 . "'/>";
                         echo "<input type='hidden' name='type' value='" . $fon->type . "'/>";
+                        echo "<input type='hidden' name='price' value='" . $fon->price . "'>"; 
                     }
                     if(isset($_POST['pins'])){
                         echo "<input type='hidden' name='product' value='" . $pins->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $pins->image1 . "'/>";
                         echo "<input type='hidden' name='type' value='" . $pins->type . "'/>";
+                        echo "<input type='hidden' name='price' value='" . $pins->price . "'>"; 
                     }
                     if(isset($_POST['patches'])){
                         echo "<input type='hidden' name='product' value='" . $patches->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $patches->image1 . "'/>";
                         echo "<input type='hidden' name='type' value='" . $patches->type . "'/>";
+                        echo "<input type='hidden' name='price' value='" . $patches->price . "'>"; 
                     }
                     if(isset($_POST['stickers-elf'])){
                         echo "<input type='hidden' name='product' value='" . $stickers_elf->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $stickers_elf->image1 . "'/>";
                         echo "<input type='hidden' name='type' value='" . $stickers_elf->type . "'/>";
+                        echo "<input type='hidden' name='price' value='" . $stickers_elf->price . "'>"; 
                     }
                     if(isset($_POST['stickers-multicolor'])){
                         echo "<input type='hidden' name='product' value='" . $stickers_multicolor->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $stickers_multicolor->image1 . "'/>";
-                        echo "<input type='hidden' name='type' value='" . $fostickers_multicolorn->type . "'/>";                    
+                        echo "<input type='hidden' name='type' value='" . $stickers_multicolor->type . "'/>";  
+                        echo "<input type='hidden' name='price' value='" . $stickers_multicolor->price . "'>";                   
                     }
                     if(isset($_POST['jones'])){
                         echo "<input type='hidden' name='product' value='" . $jones->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $jones->image1 . "'/>";
-                        echo "<input type='hidden' name='type' value='" . $jones->type . "'/>";                    
+                        echo "<input type='hidden' name='type' value='" . $jones->type . "'/>";  
+                        echo "<input type='hidden' name='price' value='" . $jones->price . "'>";                   
                     }
                     if(isset($_POST['witw'])){
                         echo "<input type='hidden' name='product' value='" . $WITW->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $WITW->image1 . "'/>";
-                        echo "<input type='hidden' name='type' value='" . $WITW->type . "'/>";                    
+                        echo "<input type='hidden' name='type' value='" . $WITW->type . "'/>";   
+                        echo "<input type='hidden' name='price' value='" . $WITW->price . "'>";                  
                     }
                     if(isset($_POST['sots'])){
                         echo "<input type='hidden' name='product' value='" . $SOTS->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $SOTS->image1 . "'/>";
-                        echo "<input type='hidden' name='type' value='" . $SOTS->type . "'/>";                    
+                        echo "<input type='hidden' name='type' value='" . $SOTS->type . "'/>";  
+                        echo "<input type='hidden' name='price' value='" . $SOTS->price . "'>";                   
                     }
                     if(isset($_POST['elfconcept'])){
                         echo "<input type='hidden' name='product' value='" . $ELFConcept->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $ELFConcept->image1 . "'/>";
-                        echo "<input type='hidden' name='type' value='" . $ELFConcept->type . "'/>";                    
+                        echo "<input type='hidden' name='type' value='" . $ELFConcept->type . "'/>"; 
+                        echo "<input type='hidden' name='price' value='" . $ELFConcept->price . "'>";                    
                     }
                     if(isset($_POST['fonconcept'])){
                         echo "<input type='hidden' name='product' value='" . $FONConcept->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $FONConcept->image1 . "'/>";
-                        echo "<input type='hidden' name='type' value='" . $FONConcept->type . "'/>";                    
+                        echo "<input type='hidden' name='type' value='" . $FONConcept->type . "'/>"; 
+                        echo "<input type='hidden' name='price' value='" . $FONConcept->price . "'>";                    
                     }
                     if(isset($_POST['candles'])){
                         echo "<input type='hidden' name='product' value='" . $candles->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $candles->image1 . "'/>";
-                        echo "<input type='hidden' name='type' value='" . $candles->type . "'/>";                    
+                        echo "<input type='hidden' name='type' value='" . $candles->type . "'/>"; 
+                        echo "<input type='hidden' name='price' value='" . $candles->price . "'>";                       
                     }
                     if(isset($_POST['book1'])){
                         echo "<input type='hidden' name='product' value='" . $Book1->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $Book1->image1 . "'/>";
-                        echo "<input type='hidden' name='type' value='" . $Book1->type . "'/>";                    
+                        echo "<input type='hidden' name='type' value='" . $Book1->type . "'/>";               
+                        echo "<input type='hidden' name='price' value='" . $Book1->price . "'>";         
                     }
                     if(isset($_POST['book2'])){
                         echo "<input type='hidden' name='product' value='" . $Book2->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $Book2->image1 . "'/>";
-                        echo "<input type='hidden' name='type' value='" . $Book2->type . "'/>";                    
+                        echo "<input type='hidden' name='type' value='" . $Book2->type . "'/>";      
+                        echo "<input type='hidden' name='price' value='" . $Book2->price . "'>";                  
                     }
                     if(isset($_POST['book3'])){
-                        echo "<input type='hidden' name='product' value='" . $Book13->name . "' />";
+                        echo "<input type='hidden' name='product' value='" . $Book3->name . "' />";
                         echo "<input type='hidden' name='productImage' value='" . $Book3->image1 . "'/>";
-                        echo "<input type='hidden' name='type' value='" . $Book3->type . "'/>";                    
+                        echo "<input type='hidden' name='type' value='" . $Book3->type . "'/>";        
+                        echo "<input type='hidden' name='price' value='" . $Book3->price . "'>";            
                     }
                 ?>
                 <div class="imageModal"></div>
-                <p class="amount"></p>
-                <input type="hidden" name="amountToPost" class="amountToPost">
+                <input type="text" class="amount" name="amount">
                 <input type="submit" value="addToCart" id="addToCart" name="confirmAmount">
             </form>
             <section class="extraspace"></section>
+            
         </section>
+        <footer>
+            <p class="footer"></p>
+        </footer>
         <script src="https://js.stripe.com/v3/"></script>
         <script src="frontend/js/stripe.js"></script>
         <script src="frontend/js/index.js"></script>
         <script src="frontend/js/products.js"></script>
 </body>
 </html>
+
+
