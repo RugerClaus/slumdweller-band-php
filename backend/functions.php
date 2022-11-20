@@ -1,6 +1,6 @@
 <?php
 
-function create_id($number,$multiplier){
+function create_id(int $number,int $multiplier){
     $text = '';
 
     if($number <= 5){
@@ -10,7 +10,7 @@ function create_id($number,$multiplier){
         $multiplier = 50;
     }
     
-    $randnumber = rand($number * $multiplier, rand(10,$number * $multiplier));
+    $randnumber = rand($number * 5.55554545,500000000);
     $random = $text . $randnumber .'qwertyu' . $randnumber % 30 . 'iopasd' . $randnumber / 2 . 'fghjklzxcvbnm' . rand(1, $randnumber);
     $hash = "/[abcdefghijklmnopqrstuvwxyz]/i";
     $final_hash_one = preg_replace($hash,"pokliuhnfmbuvydtvrcesdwxqzagsvyenvobpwmvbdegfygkwmcp" . $random . $randnumber,$random);

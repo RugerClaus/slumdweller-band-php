@@ -279,28 +279,20 @@ figcaption {
 .merch {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 5rem;
-  justify-content: center;
-}
-.merch .merch-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  gap: 2rem;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
-.merch .merch-container .merchbox {
+.merch .merchbox {
+  width: 100%;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 2rem;
 }
 
 .merchimage {
-  width: 40%;
+  max-width: 400px;
 }
 
 .albumCover {

@@ -3,7 +3,8 @@
     include 'backend/connection.php';
     include 'backend/session.php';
     
-    
+    $products = $connection->query("SELECT * FROM products");
+    $tour_dates = $connection->query("SELECT * FROM tour")
 ?>
 
 <!DOCTYPE html>
@@ -35,15 +36,9 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#merch">Merch</a></li>
-                <li><a href="#albums">Albums</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#tourDates">Tour Dates</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="cart.php"><img src="assets/icons/cart.svg" class="icons" alt="Cart">
-                    <?php 
-                       echo mysqli_num_rows($_SESSION['cart'])
-                    ?>
-                    </a>
-                </li>
             </ul>
         </nav>
     </section>
@@ -53,144 +48,59 @@
                 <li><a href="https://slumdwellermusic.com"><img src="assets/images/slumdweller-logo-mobile.webp" alt=""></a></li>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#merch">Merch</a></li>
-                <li><a href="#albums">Albums</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#tourDates">Tour Dates</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="cart.php"><img src="assets/icons/cart.svg" class="icons" alt="Cart">
-                    <?php 
-                       echo mysqli_num_rows($_SESSION['cart'])
-                    ?>
-                    </a>
-                </li>
             </ul>
         </nav>
     </section>
-    <section class="section main merch" id="merch">
-        <h1>Merch</h1>
+    <section class='section main merch' id='merch'>
+        <h1>Merch and Albums</h1>
+    <?php 
 
-        <div class="merch-container">
-            <?php 
+    
+        while($row = $products->fetch_assoc()){
+            if($row['type'] == 'merch') {
+                
                 echo "<div class='merchbox'>";
-                echo "<h2>$pins->name</h2>";
-                echo "<img class='merchimage' src='$pins->image1' alt='$pins->name'/>";
+                echo "<h2>" . $row['name']."</h2>";
+                echo "<img class='merchimage' src='" . $row['image1'] ."' alt='". $row['name'] ."'/>";
                 echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='pins'>Buy</button>";
+                echo "<button type='submit' class='buy btn' name='" . $row['name'] . "'>Buy</button>";
                 echo "</form>";
                 echo "</div>";
-                echo "<div class='merchbox'>";
-                echo "<h2>$patches->name</h2>";
-                echo "<img class='merchimage' src='$patches->image1' alt='$patches->name'/>";
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='patches'>Buy</button>";
-                echo "</form>";
-                echo "</div>";
-                echo "<div class='merchbox'>";
-                echo "<h2>$stickers_elf->name</h2>";
-                echo "<img class='merchimage' src='$stickers_elf->image1' alt='$stickers_elf->name'/>";
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='stickers-elf'>Buy</button>";
-                echo "</form>";
-                echo "</div>";
-                echo "<div class='merchbox'>";
-                echo "<h2>$stickers_multicolor->name</h2>";
-                echo "<img class='merchimage' src='$stickers_multicolor->image1' alt='$stickers_multicolor->name'/>";
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='stickers-multicolor'>Buy</button>";
-                echo "</form>";
-                echo "</div>";
-                echo "<div class='merchbox'>";
-                echo "<h2>$jones->name</h2>";
-                echo "<img  class='merchimage' src='$jones->image1' alt='$jones->name'/>";
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='jones'>Buy</button>";
-                echo "</form>";
-                echo "</div>";
-                echo "<div class='merchbox'>";
-                echo "<h2>$WITW->name</h2>";
-                echo "<img  class='merchimage' src='$WITW->image1' alt='$WITW->name'/>";
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='witw'>Buy</button>";
-                echo "</form>";
-                echo "</div>";
-                echo "<div class='merchbox'>";
-                echo "<h2>$SOTS->name</h2>";
-                echo "<img  class='merchimage' src='$SOTS->image1' alt='$SOTS->name'/>";
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='sots'>Buy</button>";
-                echo "</form>";
-                echo "</div>";
-                echo "<div class='merchbox'>";
-                echo "<h2>$ELFConcept->name</h2>";
-                echo "<img  class='merchimage' src='$ELFConcept->image1' alt='$ELFConcept->name'/>";
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='elfconcept'>Buy</button>";
-                echo "</form>";
-                echo "</div>";
-                echo "<div class='merchbox'>";
-                echo "<h2>$FONConcept->name</h2>";
-                echo "<img  class='merchimage' src='$FONConcept->image1' alt='$FONConcept->name'/>";
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='fonconcept'>Buy</button>";
-                echo "</form>";
-                echo "</div>";
-                echo "<div class='merchbox'>";
-                echo "<h2>$candles->name</h2>";
-                echo "<img  class='merchimage' src='$candles->image1' alt='$candles->name'/>";
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='candles'>Buy</button>";
-                echo "</form>";
-                echo "</div>";
-                echo "<div class='merchbox'>";
-                echo "<h2>$Book1->name</h2>";
-                echo "<img  class='merchimage' src='$Book1->image1' alt='$Book1->name'/>";
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='book1'>Buy</button>";
-                echo "</form>";
-                echo "</div>";
-                echo "<div class='merchbox'>";
-                echo "<h2>$Book2->name</h2>";
-                echo "<img  class='merchimage' src='$Book2->image1' alt='$Book2->name'/>";
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='book2'>Buy</button>";
-                echo "</form>";
-                echo "</div>";
-                echo "<div class='merchbox'>";
-                echo "<h2>$Book3->name</h2>";
-                echo "<img  class='merchimage' src='$Book3->image1' alt='$Book3->name'/>";
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='book3'>Buy</button>";
-                echo "</form>";
-                echo "</div>";
+            }
 
-            ?>
-        </div>
+    ?>
     </section>
-    <section class="section main albums" id="albums">
-        <h1>Albums</h1>
-        <div class="albums-container">
-            <img src="<?php echo $elf->image1?>" alt="The EverLasting Fog">
-            <h2 style="text-align: center;"><?php echo $elf->name;?></h2>
-            <?php 
+    <section class='section main albums' id='albums'>
+     <?php
+
+            if($row['type'] != 'merch'){
+                
+                echo "<div class='albums-container'>";
+                echo "<img src='" . $row['image1'] . "' alt='" . $row['name'] . "'>";
+                echo "<h2 style='text-align: center;''></h2>";
                 echo "<form action='products.php' method='post'>";
                 echo "<button type='submit' class='buy' name='ELF'>Buy</button>";
                 echo "<a href='https://open.spotify.com/artist/0OivFr63rPkaxNgXI3iweU?si=OKpsgI8RQgKZ_aBxvde09w' target='_blank'><img class='icon' src='assets/icons/spotify.svg' alt='Spotify' /></a>";
                 echo "<a href='https://slumdweller.bandcamp.com' target='_blank'><img class='icon' src='assets/icons/bandcamp.svg' alt='Bandcamp' /></a>";
                 echo "<a href='https://www.youtube.com/channel/UCbZ4oFgZPT7tRYscrwjUEwg' target='_blank'><img class='icon' src='assets/icons/youtube.svg' alt='Youtube' /></a>";
                 echo "</form>";
-            ?>
+                echo "</div>";  
+                 
+            }
+        }
+    ?>
         </div>
-        <div class="albums-container">
-            <img src="<?php echo $fon->image1 ?>" alt="<?php echo $fon->name?>">
-            <h2 style="text-align: center;"><?php echo $fon->name ?></h2>
-            <?php 
-                echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' name='FON' class='buy'>Buy</button>";
-                echo "<a href='https://open.spotify.com/artist/0OivFr63rPkaxNgXI3iweU?si=OKpsgI8RQgKZ_aBxvde09w' target='_blank'><img class='icon' src='assets/icons/spotify.svg' alt='Spotify' /></a>";
-                echo "<a href='https://slumdweller.bandcamp.com' target='_blank'><img class='icon' src='assets/icons/bandcamp.svg' alt='Bandcamp' /></a>";
-                echo "<a href='https://www.youtube.com/channel/UCbZ4oFgZPT7tRYscrwjUEwg' target='_blank'><img class='icon' src='assets/icons/youtube.svg' alt='Youtube' /></a>";
-                echo "</form>";
-            ?>
-        </div>
+    </section> 
+    <section class="section main tourDates" id="tourDates">
+        <h1>Tour Dates</h1>
+        <?php 
+            while($row = $tour_dates->fetch_assoc()){
+                echo "<p>" . $row['location'] . " " . $row['date'] . "</p>";
+            }
+        ?>
     </section>
     <section class="section main about" id="about">
         <h1>About</h1>
@@ -211,6 +121,7 @@
                 <input type="text" name="email" placeholder="Email: ">
                 <input type="text" name="subject" placeholder="Subject: ">
                 <textarea name="message" id="message" cols="30" rows="10" placeholder="Message: " style="font-family:helvetica;"></textarea>
+                <input type="submit" name="send-email" value="Send Email!"> 
             </form>
         </div>
     </section>

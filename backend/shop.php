@@ -4,7 +4,7 @@ include 'connection.php';
 include 'functions.php';
 
 class Product {
-    public int $product_id;
+    public $product_id;
     public $name;
     public $image1;
     public $image2;
@@ -12,10 +12,10 @@ class Product {
     public $image4;
     public $image5;
     public $type;
-    public int $in_stock;
+    public $in_stock;
     public $price;
     
-    public function __construct(int $product_id,$name,$image1,$image2,$image3,$image4,$image5,$type, $in_stock, $description,$price)
+    public function __construct($product_id,$name,$image1,$image2,$image3,$image4,$image5,$type, $in_stock, $description,$price)
     {
         $this->product_id = $product_id;
         $this->name = $name;

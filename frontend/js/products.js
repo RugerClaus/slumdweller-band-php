@@ -5,28 +5,15 @@ const addToCart = document.getElementById('addToCart')
 const subimages = document.querySelectorAll('.subimage')
 const albumCover = document.querySelector('.albumCover')
 const subImagebox = document.querySelector('.subImages')
+const checkout = document.getElementById('checkout')
 let counter = 0;
+console.log(checkout)
 
-addToCart.addEventListener('click', (e) => {
-    
-    if(amount.value == 0 || amount.value === ''){
-        e.preventDefault()
-    } else {
-        postAmount.value = amount.innerHTML
-    }
-})
+const checkoutButtons = Array.from(checkout.children);
 
-buttons.forEach(button => {
+checkoutButtons.forEach(button => {
     button.addEventListener('click', (e) => {
-        if(counter === 0){
-            amount.value = counter
-        }
-        if(e.target.classList.contains('less')){
-            amount.value = counter--
-        }e
-        if(e.target.classList.contains('more')){
-            amount.value = counter += 1
-        }
+        e.preventDefault()
     })
 })
 
