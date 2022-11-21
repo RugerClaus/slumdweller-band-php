@@ -1,55 +1,10 @@
 <?php
     require 'backend/session.php';
-    include 'backend/shopProducts.php';
+    include 'backend/shop.php';
     
-
-    function product_name(){
-        if(isset($_POST['EEL'])){
-            return 'The Everlasting Fog';
-        }
-        if(isset($_POST['FON'])){
-            return 'Forests Of November';
-        }
-        if(isset($_POST['pins'])){
-            return 'Pins';
-        }
-        if(isset($_POST['patches'])){
-            return 'Patches';
-        }
-        if(isset($_POST['stickers-elf'])){
-            return 'The Everlasting Fog - Sticker';
-        }
-        if(isset($_POST['stickers-multicolor'])){
-            return 'Multicolor Slumdweller Stickers';
-        }
-        if(isset($_POST['jones'])){
-            return 'Slumdweller Jones';
-        }
-        if(isset($_POST['witw'])){
-            return 'Winter In the Wastes - Concept Art';
-        }
-        if(isset($_POST['sots'])){
-            return 'Season Of The Spine - Concept Art';
-        }
-        if(isset($_POST['elfconcept'])){
-            return 'The Everlasting Fog - Concept Art';
-        }
-        if(isset($_POST['fonconcept'])){
-            return 'Forests Of November - Concept Art';
-        }
-        if(isset($_POST['candles'])){
-            return 'Candles';
-        }
-        if(isset($_POST['book1'])){
-            return 'The Everlasting Fog - Short Story';
-        }
-        if(isset($_POST['book2'])){
-            return 'Winter In The Wastes - Short Story';
-        }
-        if(isset($_POST['book3'])){
-            return 'Season Of The Spine - Short Story';
-        }
-    };
+    if(isset($_POST['buy'])){
+        $product = new Product($_POST['id'],$_POST['name'],$_POST['image1'],$_POST['image2'],$_POST['image3'],$_POST['image4'],$_POST['image5'],$_POST['type'],$_POST['instock'],$_POST['description'],$_POST['price']);
+    
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo product_name()?></title>
+    <title><?php print_r ($product->name)?></title>
     <link rel="stylesheet" href="assets/stylesheets/index.css">
     <link rel="stylesheet" href="assets/stylesheets/products.css">
 </head>
@@ -114,218 +69,20 @@
         <section class="main albums" style="font-size: 2rem;">
             <h2 style="text-align: center;">
             <?php 
-                if(isset($_POST['ELF'])){
-                    echo "$elf->name";
-                }
-                if(isset($_POST['FON'])){
-                    echo "$fon->name";
-                }
-                if(isset($_POST['pins'])){
-                    echo "$pins->name";
-                }
-                if(isset($_POST['patches'])){
-                    echo "$patches->name";
-                }
-                if(isset($_POST['stickers-elf'])){
-                    echo "The Everlasting Fog - Sticker";
-                }
-                if(isset($_POST['stickers-multicolor'])){
-                    echo "Multicolor Slumdweller - Stickers";
-                }
-                if(isset($_POST['jones'])){
-                    echo "$jones->name";
-                }
-                if(isset($_POST['witw'])){
-                    echo "Winter In The Wastes - Concept Art";
-                }
-                if(isset($_POST['sots'])){
-                    echo "Season Of The Spines - Concept Art";
-                }
-                if(isset($_POST['elfconcept'])){
-                    echo "$ELFConcept->name";
-                }
-                if(isset($_POST['fonconcept'])){
-                    echo "$FONConcept->name";
-                }
-                if(isset($_POST['candles'])){
-                    echo "$candles->name";
-                }
-                if(isset($_POST['book1'])){
-                    echo "$Book1->name";
-                }
-                if(isset($_POST['book2'])){
-                    echo "$Book2->name";
-                }
-                if(isset($_POST['book3'])){
-                    echo "$Book3->name";
-                }
-            ?>
-            </h2>
-            <?php 
-                if(isset($_POST['ELF'])){
-                    echo "<img class='albumCover' src='" .  "$elf->image1' alt='$elf->name' />";
-                    echo "<p>" . $elf->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $elf->price;
-                    echo "</h1>";
-                }
-                if(isset($_POST['FON'])){
-                    echo "<img class='albumCover' src='" .  "$fon->image1' alt='$fon->name' />";
-                    echo "<p>" . $fon->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $fon->price;
-                    echo "</h1>";
-                }
-                if(isset($_POST['pins'])){
-                    echo "<img class='albumCover' src='" .  "$pins->image1' alt='$pins->name' />";
-                    echo "<p>" . $pins->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $pins->price;
-                    echo "</h1 class='price'>";
-                    echo "<div class='subImages'>";
-                    echo "<img class='subimage' src='$pins->image2' />"; 
-                    echo "<img class='subimage' src='$pins->image3' />"; 
-                    echo "</div>";
-                }
-                if(isset($_POST['patches'])){
-                    echo "<img class='albumCover' src='" .  "$patches->image1' alt='$patches->name' />";
-                    echo "<p>" . $patches->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $patches->price;
-                    echo "</h1>";
-                }
-                if(isset($_POST['sots'])){
-                    echo "<img class='albumCover' src='" .  "$SOTS->image1' alt='$SOTS->name' />";
-                    echo "<p>" . $SOTS->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $SOTS->price;
-                    echo "</h1>";
-                    echo "<div class='subImages'>";
-                    echo "<img class='subimage' src='$SOTS->image2' />"; 
-                    echo "<img class='subimage' src='$SOTS->image3' />"; 
-                    echo "<img class='subimage' src='$SOTS->image4' />"; 
-                    echo "<img class='subimage' src='$SOTS->image5' />"; 
-                    echo "</div>";
-                }
-                if(isset($_POST['stickers-elf'])){
-                    echo "<img class='albumCover' src='" .  "$stickers_elf->image1' alt='$stickers_elf->name' />";
-                    echo "<p>" . $stickers_elf->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $stickers_elf->price;
-                    echo "</h1>";
-                }
-                if(isset($_POST['stickers-multicolor'])){
-                    echo "<img class='albumCover' src='" .  "$stickers_multicolor->image1' alt='$stickers_multicolor->name' />";
-                    echo "<p>" . $stickers_multicolor->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $stickers_multicolor->price;
-                    echo "</h1>";
-                    echo "<div class='subImages'>";
-                    echo "<img class='subimage' src='$stickers_multicolor->image2' />"; 
-                    echo "</div>";
-                }
-                if(isset($_POST['jones'])){
-                    echo "<img class='albumCover' src='" .  "$jones->image1' alt='$jones->name' />";
-                    echo "<p>" . $jones->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $jones->price;
-                    echo "</h1>";
-                    echo "<div class='subImages'>";
-                    echo "<img class='subimage' src='$jones->image2' />"; 
-                    echo "<img class='subimage' src='$jones->image3' />"; 
-                    echo "<img class='subimage' src='$jones->image4' />"; 
-                    echo "</div>";
-                }
-                if(isset($_POST['witw'])){
-                    echo "<img class='albumCover' src='" .  "$WITW->image1' alt='$WITW->name' />";
-                    echo "<p>" . $WITW->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $WITW->price;
-                    echo "</h1>";
-                    echo "<div class='subImages'>";
-                    echo "<img class='subimage' src='$WITW->image2' />"; 
-                    echo "<img class='subimage' src='$WITW->image3' />"; 
-                    echo "<img class='subimage' src='$WITW->image4' />"; 
-                    echo "<img class='subimage' src='$WITW->image5' />";
-                    echo "</div>";
-                }
-                if(isset($_POST['elfconcept'])){
-                    echo "<img class='albumCover' src='" .  "$ELFConcept->image1' alt='$ELFConcept->name' />";
-                    echo "<p>" . $ELFConcept->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $ELFConcept->price;
-                    echo "</h1>";
-                    echo "<div class='subImages'>";
-                    echo "<img class='subimage' src='$ELFConcept->image2' />"; 
-                    echo "<img class='subimage' src='$ELFConcept->image3' />"; 
-                    echo "<img class='subimage' src='$ELFConcept->image4' />"; 
-                    echo "<img class='subimage' src='$ELFConcept->image5' />";
-                    echo "</div>";
-                }
-                if(isset($_POST['fonconcept'])){
-                    echo "<img class='albumCover' src='" .  "$FONConcept->image1' alt='$FONConcept->name' />";
-                    echo "<p>" . $FONConcept->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $FONConcept->price;
-                    echo "</h1>";
-                    echo "<div class='subImages'>";
-                    echo "<img class='subimage' src='$FONConcept->image2' />"; 
-                    echo "<img class='subimage' src='$FONConcept->image3' />"; 
-                    echo "<img class='subimage' src='$FONConcept->image4' />"; 
-                    echo "</div>";
-                }
-                if(isset($_POST['candles'])){
-                    echo "<img class='albumCover' src='" .  "$candles->image1' alt='$candles->name' />";
-                    echo "<p>" . $candles->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $candles->price;
-                    echo "</h1>";
-                    echo "<div class='subImages'>";
-                    echo "<img class='subimage' src='$candles->image2' />"; 
-                    echo "<img class='subimage' src='$candles->image3' />"; 
-                    echo "<img class='subimage' src='$candles->image4' />"; 
-                    echo "<img class='subimage' src='$candles->image5' />";
-                    echo "</div>";
-                }
-                if(isset($_POST['book1'])){
-                    echo "<img class='albumCover' src='" .  "$Book1->image1' alt='$Book1->name' />";
-                    echo "<p>" . $Book1->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $Book1->price;
-                    echo "</h1>";
-                    echo "<div class='subImages'>";
-                    echo "<img class='subimage' src='$Book1->image2' />"; 
-                    echo "<img class='subimage' src='$Book1->image3' />"; 
-                    echo "<img class='subimage' src='$Book1->image4' />"; 
-                    echo "<img class='subimage' src='$Book1->image5' />";
-                    echo "</div>";
-                }
-                if(isset($_POST['book2'])){
-                    echo "<img class='albumCover' src='" .  "$Book2->image1' alt='$Book3->name' />";
-                    echo "<p>" . $Book2->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo $Book2->price;
-                    echo "</h1>";
-                    echo "<div class='subImages'>";
-                    echo "<img class='subimage' src='$Book2->image2' />"; 
-                    echo "<img class='subimage' src='$Book2->image3' />"; 
-                    echo "<img class='subimage' src='$Book2->image4' />"; 
-                    echo "<img class='subimage' src='$Book2->image5' />";
-                    echo "</div>";
-                }
-                if(isset($_POST['book3'])){
-                    echo "<img class='albumCover' src='" .  "$Book3->image1' alt='$Book3->name' />";
-                    echo "<p>" . $Book3->description . "</p>";
-                    echo "<h1 class='price'>";
-                    echo "$" . $Book3->price;
-                    echo "</h1>";
-                    echo "<div class='subImages'>";
-                    echo "<img class='subimage' src='$Book3->image2' />"; 
-                    echo "<img class='subimage' src='$Book3->image3' />"; 
-                    echo "<img class='subimage' src='$Book3->image4' />"; 
-                    echo "<img class='subimage' src='$Book3->image5' />";
-                    echo "</div>";
-                }
+                echo "<h1>$product->name</h1>";
+                echo "<img class='albumCover' src='$product->image1' alt='$product->name' />";
+                echo "<p>" . $product->description . "</p>";
+                echo "<h1 class='price'>";
+                echo $product->price;
+                echo "</h1>";
+                echo "<div class='subImages'>";
+                echo "<img class='subimage' src='$product->image2' />"; 
+                echo "<img class='subimage' src='$product->image3' />"; 
+                echo "<img class='subimage' src='$product->image4' />"; 
+                echo "<img class='subimage' src='$product->image5' />";
+                echo "</div>";
+
+    }
             ?>
             <section class="extraspace"></section>
             <div id="checkout"></div>

@@ -1,10 +1,9 @@
 <?php 
-    include 'backend/shopProducts.php';
     include 'backend/connection.php';
     include 'backend/session.php';
     
     $products = $connection->query("SELECT * FROM products");
-    $tour_dates = $connection->query("SELECT * FROM tour")
+    $tour_dates = $connection->query("SELECT * FROM tour");
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +53,7 @@
             </ul>
         </nav>
     </section>
-    <section class='section main merch' id='merch'>
+    <section class='merch' id='merch'>
         <h1>Merch and Albums</h1>
     <?php 
 
@@ -66,7 +65,18 @@
                 echo "<h2>" . $row['name']."</h2>";
                 echo "<img class='merchimage' src='" . $row['image1'] ."' alt='". $row['name'] ."'/>";
                 echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy btn' name='" . $row['name'] . "'>Buy</button>";
+                echo "<input type='hidden' name='id' value='" . $row['product_id'] . "'/>";
+                echo "<input type='hidden' name='name' value='" . $row['name'] . "'/>";
+                echo "<input type='hidden' name='image1' value='" . $row['image1'] . "'/>";
+                echo "<input type='hidden' name='image2' value='" . $row['image2'] . "'/>";
+                echo "<input type='hidden' name='image3' value='" . $row['image3'] . "'/>";
+                echo "<input type='hidden' name='image4' value='" . $row['image4'] . "'/>";
+                echo "<input type='hidden' name='image5' value='" . $row['image5'] . "'/>";
+                echo "<input type='hidden' name='type' value='" . $row['type'] . "'/>";
+                echo "<input type='hidden' name='instock' value='" . $row['in_stock'] . "'/>";
+                echo "<input type='hidden' name='price' value='" . $row['price'] . "'/>";
+                echo "<input type='hidden' name='description' value='" . $row['description'] . "'/>";
+                echo "<button type='submit' class='buy btn' name='buy'>Buy</button>";
                 echo "</form>";
                 echo "</div>";
             }
@@ -79,10 +89,21 @@
             if($row['type'] != 'merch'){
                 
                 echo "<div class='albums-container'>";
+                echo "<h2 style='text-align:center;'>" . $row['name']."</h2>";
                 echo "<img src='" . $row['image1'] . "' alt='" . $row['name'] . "'>";
-                echo "<h2 style='text-align: center;''></h2>";
                 echo "<form action='products.php' method='post'>";
-                echo "<button type='submit' class='buy' name='ELF'>Buy</button>";
+                echo "<input type='hidden' name='id' value='" . $row['product_id'] . "'/>";
+                echo "<input type='hidden' name='name' value='" . $row['name'] . "'/>";
+                echo "<input type='hidden' name='image1' value='" . $row['image1'] . "'/>";
+                echo "<input type='hidden' name='image2' value='" . $row['image2'] . "'/>";
+                echo "<input type='hidden' name='image3' value='" . $row['image3'] . "'/>";
+                echo "<input type='hidden' name='image4' value='" . $row['image4'] . "'/>";
+                echo "<input type='hidden' name='image5' value='" . $row['image5'] . "'/>";
+                echo "<input type='hidden' name='type' value='" . $row['type'] . "'/>";
+                echo "<input type='hidden' name='instock' value='" . $row['in_stock'] . "'/>";
+                echo "<input type='hidden' name='price' value='" . $row['price'] . "'/>";
+                echo "<input type='hidden' name='description' value='" . $row['description'] . "'/>";
+                echo "<button type='submit' class='buy btn' name='buy'>Buy</button>";
                 echo "<a href='https://open.spotify.com/artist/0OivFr63rPkaxNgXI3iweU?si=OKpsgI8RQgKZ_aBxvde09w' target='_blank'><img class='icon' src='assets/icons/spotify.svg' alt='Spotify' /></a>";
                 echo "<a href='https://slumdweller.bandcamp.com' target='_blank'><img class='icon' src='assets/icons/bandcamp.svg' alt='Bandcamp' /></a>";
                 echo "<a href='https://www.youtube.com/channel/UCbZ4oFgZPT7tRYscrwjUEwg' target='_blank'><img class='icon' src='assets/icons/youtube.svg' alt='Youtube' /></a>";
@@ -98,7 +119,7 @@
         <h1>Tour Dates</h1>
         <?php 
             while($row = $tour_dates->fetch_assoc()){
-                echo "<p>" . $row['location'] . " " . $row['date'] . "</p>";
+                echo "<p>" . $row['location'] . " ::: " . $row['date'] . "</p>";
             }
         ?>
     </section>

@@ -31,6 +31,7 @@
     <style>
         body {
             max-width: 100vw;
+            font-family: helvetica;
         }
         .body {
             width: 100vw;
@@ -58,6 +59,13 @@
             align-items: center;
             gap: 3rem;
         }
+        form {
+            border: 1px solid black;
+            padding: 50px;
+        }
+        .logout {
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -74,17 +82,23 @@
                     <input type="file" name="image3" value="image3">
                     <input type="file" name="image4" value="image4">
                     <input type="file" name="image5" value="image5">
-                    <select name="type" id="type">
+                    <label for="type">Type:</label><select name="type" id="type">
                         <option value="merch">Merch</option>
                         <option value="album">Album</option>
                     </select>
-                    <select name="instock" id="type">
+                    <label for="instock">In Stock?:</label><select name="instock" id="type">
                         <option value="1">Yes</option>
                         <option value="0">No</option>
                     </select>
-                    <input type="number" name="price" id="price" />
+                    <input type="number" placeholder="Price:" name="price" id="price" />
 
-                    <input type="submit" name='add' value='Submit to Site' class="btn">
+                    <input type="submit" name='addToProducts' value='Submit to Site' class="btn">
+                </form>
+                <h2>Tour Date Manager: Add</h2>
+                <form action="addToTourDates.php" method="post" >
+                    <input type="text" name="location" placeholder="Location:" />
+                    <input type="date" name="date" />
+                    <input type="submit" name="add" value="Add">
                 </form>
             </section>
         </main>
@@ -102,12 +116,13 @@
                     <?php 
                         echo 'Hello, '. $user_data['user_name'];
                     ?>
-                    <form action='logout.php' method='post'>
+                    <form class='logout' action='logout.php' method='post'>
                         <button type='submit' name='logout' class='btn' >&nbsp;Logout</button>
                     </form>
                     
                 </p>
                 <a href='products.php'><button class='btn'>Product Manager</button></a>
+                <a href='tours.php'><button class='btn'>Tour Manager</button></a>
             </header>
         `;
         el.innerHTML = `${header}`

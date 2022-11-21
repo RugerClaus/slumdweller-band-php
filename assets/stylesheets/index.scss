@@ -267,24 +267,15 @@ figcaption {
     justify-content: center;
     align-items: center;
 }
-.merch {
+.merchbox {
     display: flex;
-    flex-direction: column;
     width: 100%;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    .merchbox {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        
-    }
 }
 .merchimage {
-    max-width: 400px;
+    width: 40%;
 }
 
 .albumCover {
