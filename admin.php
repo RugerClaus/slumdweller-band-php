@@ -1,3 +1,2 @@
 <?php 
-    header('location: login-system/index.php')
-?>
+    header('location: login-system/index.php');

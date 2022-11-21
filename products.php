@@ -38,13 +38,8 @@
                     <li><a href="index.php#merch">Merch</a></li>
                     <li><a href="index.php#albums">Albums</a></li>
                     <li><a href="index.php#about">About</a></li>
+                    <li><a href="#tourDates">Tour Dates</a></li>
                     <li><a href="index.php#contact">Contact</a></li>
-                    <li><a href="cart.php"><img src="assets/icons/cart.svg" class="icons" alt="Cart">
-                        <?php 
-                            echo mysqli_num_rows($_SESSION['cart'])
-                        ?>
-                        </a>
-                    </li>
                 </ul>
             </nav>
         </section>
@@ -56,13 +51,8 @@
                     <li><a href="index.php#merch">Merch</a></li>
                     <li><a href="index.php#albums">Albums</a></li>
                     <li><a href="index.php#about">About</a></li>
+                    <li><a href="#tourDates">Tour Dates</a></li>
                     <li><a href="index.php#contact">Contact</a></li>
-                    <li><a href="cart.php"><img src="assets/icons/cart.svg" class="icons" alt="Cart">
-                        <?php 
-                            echo mysqli_num_rows($_SESSION['cart'])
-                        ?>
-                        </a>
-                    </li>
                 </ul>
             </nav>
         </section> 
