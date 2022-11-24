@@ -9,6 +9,7 @@
         $price = $_POST['price'];
         $instock = $_POST['instock'];
         $desc = $_POST['description'];
+        $shopQTY = $_POST['stockquantity'];
         $uploaddir = 'uploads/';
         $uploadfile1 = $uploaddir . basename($_FILES['image1']['name']);
         $uploadfile2 = $uploaddir . basename($_FILES['image2']['name']);
@@ -45,8 +46,8 @@
         echo 'Here is some more debugging info:';
         print_r($_FILES); 
 
-        $query = "UPDATE `products`  SET `name`='$name',`description`='$desc',`type`='$type',`in_stock`='$instock',`price`='$price',`image1`='$uploadfile1',`image2`='$uploadfile2',`image3`='$uploadfile3',`image4`='$uploadfile4',`image5`='$uploadfile5' where `product_id` = '$id'";
+        $query = "UPDATE `products`  SET `name`='$name',`description`='$desc',`type`='$type',`in_stock`='$instock',`price`='$price',`image1`='$uploadfile1',`image2`='$uploadfile2',`image3`='$uploadfile3',`image4`='$uploadfile4',`image5`='$uploadfile5', `stockqty`='$shopQTY' where `product_id` = '$id'";
         $connection->query($query);
-        header('location: product.php');
+        header('location: products.php');
     }
 ?>

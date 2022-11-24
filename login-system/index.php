@@ -93,6 +93,7 @@
                     <input type="number" placeholder="Price:" name="price" id="price" />
 
                     <input type="submit" name='addToProducts' value='Submit to Site' class="btn">
+                    <input type="number" name="stockquantity" placeholder="Quantity In Stock">
                 </form>
                 <h2>Tour Date Manager: Add</h2>
                 <form action="addToTourDates.php" method="post" >

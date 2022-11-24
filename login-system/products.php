@@ -25,7 +25,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" />
-    <title>Document</title>
+    <title>Hello, <?php print_r($_SESSION['user_name']) ?></title>
     <style>
         img {
             max-width: 100px;
@@ -102,10 +102,13 @@
                 echo "</td>";
 
                 echo "<td>";
-                echo "<img src='../" . $row['image1'] . "' alt='" . $row['name'] ."' />";
+                echo "<img src='" . $row['image1'] . "' alt='" . $row['name'] ."' />";
                 echo "</td>";
                 echo "<td>";
                 echo $row['price'];
+                echo "</td>";
+                echo "<td>";
+                echo $row['stockqty'];
                 echo "</td>";
 
                 echo "<td>";
@@ -121,6 +124,7 @@
                 echo "<input type='hidden' name='image4' value='" . $row['image4'] . "' />";
                 echo "<input type='hidden' name='image5' value='" . $row['image5'] . "' />";
                 echo "<input type='hidden' name='price' value='" . $row['price'] . "' />";
+                echo "<input type='hidden' name='stockquantity' value='" . $row['stockqty'] . "'/>";
                 echo "<input class='btn' type='submit' name='edit' value='edit'/>";
                 echo "</form>";
                 echo "</td>";

@@ -14,8 +14,9 @@ class Product {
     public $type;
     public $in_stock;
     public $price;
+    public int $stockQTY;
     
-    public function __construct($product_id,$name,$image1,$image2,$image3,$image4,$image5,$type, $in_stock, $description,$price)
+    public function __construct($product_id,$name,$image1,$image2,$image3,$image4,$image5,$type, $in_stock, $description,$price,$shopQTY)
     {
         $this->product_id = $product_id;
         $this->name = $name;
@@ -28,6 +29,7 @@ class Product {
         $this->in_stock = $in_stock;
         $this->description = $description;
         $this->price = $price;
+        $this->shopQTY = $shopQTY;
     }
 }
 // $name = 'Forests of November';
