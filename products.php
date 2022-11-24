@@ -1,9 +1,11 @@
 <?php
     require 'backend/session.php';
     include 'backend/shop.php';
+    include 'backend/ip.php';
+    include 'backend/geoplugin.php';
     
     if(isset($_POST['buy'])){
-        $product = new Product($_POST['id'],$_POST['name'],$_POST['image1'],$_POST['image2'],$_POST['image3'],$_POST['image4'],$_POST['image5'],$_POST['type'],$_POST['instock'],$_POST['description'],$_POST['price']);
+        $product = new Product($_POST['id'],$_POST['name'],$_POST['image1'],$_POST['image2'],$_POST['image3'],$_POST['image4'],$_POST['image5'],$_POST['type'],$_POST['instock'],$_POST['description'],$_POST['price'],null);
     
 ?>
 
@@ -62,6 +64,7 @@
                 echo "<h1>$product->name</h1>";
                 echo "<img class='albumCover' src='$product->image1' alt='$product->name' />";
                 echo "<p>" . $product->description . "</p>";
+                echo $ipdat->geoplugin_currencySymbol . "\n";
                 echo "<h1 class='price'>";
                 echo $product->price;
                 echo "</h1>";

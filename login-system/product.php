@@ -104,7 +104,7 @@
             <p>Type:</p>
             <input type="text" name="type" value="<?php echo $product->type?>">
             <p>Price:</p>
-            <input type="text" name="price" value="<?php echo $product->price?>">
+            <span>$:<input type="text" name="price" value="<?php echo $product->price?>"></span>
             <p>In Stock?:</p>
             <input type="text" name="instock" value="<?php if($product->in_stock == 1){echo "yes";}else{echo "no";} ?>">
             <p>Quantity in stock:</p>
@@ -125,10 +125,5 @@
         </form>
     </main>
     <?php }?>
-    <form action="edit.php">
-        <?php 
-            
-        ?>
-    </form>
 </body>
 </html>
